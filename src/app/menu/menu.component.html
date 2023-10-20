@@ -1,0 +1,21 @@
+<h1 style="text-align: center">Our Menu</h1>
+
+<div
+  class="center-buttons"
+  style="display: flex; justify-content: center; align-items: center; "
+>
+  <button (click)="setSelectCategory('')" >All</button>
+  <button (click)="setSelectCategory('Appetizer')" >Appetizers</button>
+  <button (click)="setSelectCategory('Main Course')">Main Courses</button>
+  <button (click)="setSelectCategory('Dessert')">Desserts</button>
+</div>
+
+<div class="menu-items">
+  <ul *ngFor="let menu of filteredMenu" class="menu-item">
+    <img src="{{menu.imagePath}}" alt="{{ menu.name }}"  style="height: 40%; width:90%"/>
+    <p style="font-size: 15px;">{{ menu.name }}</p>
+    <p style="font-size: 15px;">{{ menu.category }}</p>
+    <p style="font-size: 15px;">Price :{{ menu.price }}</p>
+    <button>Add to Cart</button>
+  </ul>
+</div>
